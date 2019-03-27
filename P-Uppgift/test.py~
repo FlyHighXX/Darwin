@@ -1,0 +1,7 @@
+v = 0
+count=0
+while count < 1:
+    v=100
+    count=count+1
+    break
+print(v)

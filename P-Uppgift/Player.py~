@@ -1,0 +1,12 @@
+class Player:
+    def __init__(self, name, wins, played):
+        self.name = name
+        self.wins = wins
+        self.played = played
+
+    def wonGame(self):
+        self.wins = self.wins + 1
+        self.played = self.played + 1
+
+    def looseGame(self):
+        self.played = self.played + 1

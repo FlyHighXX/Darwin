@@ -1,0 +1,35 @@
+import Player
+
+player_list = []
+
+file = open("data.txt","r")
+lines = file.read().splitlines()
+file.close()
+
+lineCount = 0
+for l in lines:
+    lineCount = lineCount + 1
+
+count=0
+while count<lineCount:
+    name = lines[count]
+    chance = float(lines[count + 1])
+    wins = int(lines[count + 2])
+    played = int(lines[count + 3])
+    player1 = Player.Player(name,chance,wins,played)
+    player_list.append(player1)
+    count = count + 4
+
+player_list[0].wonGame()
+player_list[1].looseGame()
+
+file = open("data.txt","w")
+for player in player_list:
+    name = player.name
+    chance = player.chance
+    wins = player.wins
+    played = player.played
+    file.write(name + '\n')
+    file.write(str(chance) + '\n')
+    file.write(str(wins)+ '\n')
+    file.write(str(played)+ '\n')

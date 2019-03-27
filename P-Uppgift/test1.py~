@@ -1,0 +1,4 @@
+l = []
+str = "Hej"
+l.append(str)
+print(l)
